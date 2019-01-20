@@ -5,19 +5,4 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
 
-
-  <servlet>
-    <servlet-name>javax.ws.rs.core.Application</servlet-name>
-
-    <init-param>
-      <param-name>javax.ws.rs.Application</param-name>
-      <param-value>com.openmtrapi.api.HelloWorldTest </param-value>
-    </init-param>
-    <load-on-startup>1</load-on-startup>
-  </servlet>
-
-  <servlet-mapping>
-    <servlet-name>javax.ws.rs.core.Application</servlet-name>
-    <url-pattern>/api/*</url-pattern>
-  </servlet-mapping>
 </web-app>
