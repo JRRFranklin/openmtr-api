@@ -34,6 +34,22 @@
       <version>2.0</version>
     </dependency>
 
+    <!-- https://mvnrepository.com/artifact/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.api.jaxrs -->
+    <dependency>
+      <groupId>com.ibm.websphere.appserver.api</groupId>
+      <artifactId>com.ibm.websphere.appserver.api.jaxrs</artifactId>
+      <version>1.0.23</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.api.json -->
+    <dependency>
+      <groupId>com.ibm.websphere.appserver.api</groupId>
+      <artifactId>com.ibm.websphere.appserver.api.json</artifactId>
+      <version>1.0.23</version>
+    </dependency>
+
+
+
 
 
 
