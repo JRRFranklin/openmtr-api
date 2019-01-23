@@ -1,38 +1,46 @@
 package com.openmtrapi.api;
 
 
+import javax.ws.rs.core.Response;
+
+
 public class ReturnResponse {
 
-    protected int statusCode;
-    protected String message;
-    protected boolean error;
-    protected String data;
+    boolean error;
+    String error_msg;
+    String data;
 
-
-    public void setStatusCode(int statusCode) {
-        this.statusCode = statusCode;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    public void error(String message, Integer statusCode ) {
+    /**
+     * Will return a JSON response with the error message given
+     * @param message The message to return
+     * @param statusCode The Status code to return
+     * @return Response
+     */
+    public Response error(String message, Integer statusCode ) {
         if(statusCode == null) {
             statusCode = 400;
         }
+        this.error = true;
+        this.error_msg = message;
 
-        this.statusCode = statusCode;
-        this.message = message;
+        return Response
+                .status(statusCode)
+                .entity("{" +
+                        "\"error\" : \"" + this.error + "\", " +
+                        "\"error_msg\" : \"" + this.error_msg + "\" " +
+                        "}"
+                )
+                .build();
+
     }
+
 
     public void setData(String data) {
         this.data = data;
     }
 
-
-    @Override
-    public String toString() {
-        return "{ \"error\": " + this.error + ", \"error_msg\": " + this.message + ", \"status\": " + this.statusCode + ", \"data\": " + this.data + "}";
+    public String getData() {
+        return this.data;
     }
+
 }
