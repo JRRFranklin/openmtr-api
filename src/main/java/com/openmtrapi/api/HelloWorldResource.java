@@ -13,10 +13,16 @@ public class HelloWorldResource {
     // The Java method will produce content identified by the MIME Media
     // type "text/plain"
     @Produces("application/json")
-    @Path("{name}")
-    public Response sayHelloWorld(@PathParam("name") String name) {
-        // Return some cliched textual content
+    public Response sayHelloWorld(@QueryParam("first") String firstName,
+                                  @QueryParam("last") String lastName) {
+        if(firstName == null || firstName.isEmpty() ||
+                lastName == null || lastName.isEmpty()) {
+            return Response.status(400).build();
+        }
+        Student student = new Student();
+        student.firstName = firstName;
+        student.lastName = lastName;
 
-        return Response.status(200).entity("Hello " + name + " nice to meet you").build();
+        return Response.status(200).entity(student).build();
     }
 }
