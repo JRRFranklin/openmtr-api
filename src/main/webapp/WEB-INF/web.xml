@@ -5,17 +5,17 @@
         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 
   <servlet>
-    <servlet-name>HelloWorldApp</servlet-name>
+    <servlet-name>OpenMTR-API</servlet-name>
     <servlet-class>com.ibm.websphere.jaxrs.server.IBMRestServlet</servlet-class>
     <init-param>
       <param-name>javax.ws.rs.Application</param-name>
-      <param-value>com.openmtrapi.api.HelloWorldAppConfig</param-value>
+      <param-value>com.openmtrapi.api.OpenmtrApiMainConfig</param-value>
     </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
 
   <servlet-mapping>
-  <servlet-name>HelloWorldApp</servlet-name>
+  <servlet-name>OpenMTR-API</servlet-name>
   <url-pattern>/api/*</url-pattern>
   </servlet-mapping>
 </web-app>
